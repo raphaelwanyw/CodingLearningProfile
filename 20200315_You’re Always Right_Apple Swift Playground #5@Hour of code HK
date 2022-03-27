@@ -1,0 +1,24 @@
+// Workshop: Hour of code HK - Apple Swift Playground #5 - Learn to code 1 - 6.9
+// Title: You’re Always Right
+// Author: Raphael Wan
+// Date: 15 Mar 2020
+
+// Coder: Raphael & Michael Wan
+// Date: 15 Mar 2020
+
+// If not a Gem
+while (!isOnGem) {
+    // Move Forward
+    moveForward()
+    // If isBlocked, turn Right
+    if (isBlocked) {
+        turnRight()
+    }
+    // If isOnClosedSwitch, toggle
+    if (isOnClosedSwitch) {
+        toggleSwitch()    
+    }
+}
+collectGem()
+
+// End
