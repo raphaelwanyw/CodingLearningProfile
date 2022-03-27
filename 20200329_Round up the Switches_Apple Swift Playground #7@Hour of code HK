@@ -1,0 +1,40 @@
+// Workshop: Hour of code HK - Apple Swift Playground #7 - Learn to code 2 - 1.7
+// Title: Round up the Switches
+// Author: Raphael Wan
+// Date: 29 Mar 2020
+
+// coder: Raphael & Michael Wan
+// Date: 29 Mar 2020
+
+// Switch Counter
+var switchCounter = 0
+// Gem Counter
+var gemCounter = 0
+var index = 0
+var flag = [0, 0, 0, 0, 0, 0, 0]
+
+moveForward()
+
+//movePlatform
+while !isOnClosedSwitch {
+    moveForward()
+    if isOnGem {
+        collectGem()
+        gemCounter += 1
+        flag [index] = 1
+    }
+    index = index + 1 
+    
+    if isBlocked {
+        turnRight()
+    }
+}
+for i in 0 ... 6 {
+    if (flag[i] == 1){
+        toggleSwitch()
+    }
+    moveForward()
+    if isBlocked {
+        turnRight()
+    }
+}
