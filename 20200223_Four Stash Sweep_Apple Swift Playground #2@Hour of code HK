@@ -1,0 +1,37 @@
+# Workshop: Hour of code HK - Apple Swift Playground #2 - Learn to code 1 - 3.7
+# Title: Four Stash Sweep
+# Author: Raphael Wan
+# Date: 23 Feb 2020
+
+func collectLeftGem() {
+    turnLeft()
+    moveForward()
+    collectGem()
+}
+func turnAround() {
+    turnLeft()
+    turnLeft()
+    moveForward()
+}
+func solveStash() {
+    //Middle Gem
+    moveForward()
+    collectGem()
+    
+    //Left Gem
+    collectLeftGem()
+    
+    //Top Gem
+    turnAround()
+    collectLeftGem()
+    
+    //Right Gem
+    turnAround()
+    collectLeftGem()
+    
+    //Teleport
+    moveForward()
+}
+for i in 1 ... 4 {
+    solveStash()
+}
