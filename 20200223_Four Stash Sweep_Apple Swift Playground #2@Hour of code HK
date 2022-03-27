@@ -1,7 +1,7 @@
-# Workshop: Hour of code HK - Apple Swift Playground #2 - Learn to code 1 - 3.7
-# Title: Four Stash Sweep
-# Author: Raphael Wan
-# Date: 23 Feb 2020
+// Workshop: Hour of code HK - Apple Swift Playground #2 - Learn to code 1 - 3.7
+// Title: Four Stash Sweep
+// Author: Raphael Wan
+// Date: 23 Feb 2020
 
 func collectLeftGem() {
     turnLeft()
