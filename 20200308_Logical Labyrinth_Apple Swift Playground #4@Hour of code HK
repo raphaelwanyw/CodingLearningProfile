@@ -1,0 +1,43 @@
+# Workshop: Hour of code HK - Apple Swift Playground #4 - Learn to code 1 - 5.5
+# Title: Logical Labyrinth
+# Author: Raphael Wan
+# Date: 8 Mar 2020
+
+// Coder: Raphael & Michael
+// Date: March 8, 2020
+
+// solveRightSide
+func solveRightSide() {
+    turnRight()
+    moveForward()
+    moveForward()
+    collectGem()
+    turnLeft()
+    turnLeft()
+    moveForward()
+    moveForward()
+    turnRight()
+    collectGem()
+    toggleSwitch()
+}
+// solveMainPath
+for i in 1 ... 8 {
+    moveForward()
+    // Case 1: Check if closed switch AND with Gem
+    if (isOnGem && isOnClosedSwitch) {
+        //func solveRightSide
+        solveRightSide()
+    }
+        // Case 2: Check if closed switch
+    else if isOnClosedSwitch {
+        //  toggleSwitch + turnLeft
+        toggleSwitch()
+        turnLeft()
+    } 
+    // Case 3: Check if is on gem
+    else if (isOnGem) {
+        // Collect gem
+        collectGem()
+    }
+}
+//End
