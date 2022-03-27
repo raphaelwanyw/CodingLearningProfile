@@ -1,0 +1,63 @@
+# Workshop: Hour of code HK - Apple Swift Playground #3 - Learn to code 1 - 4.7
+# Title: Decision Tree
+# Author: Raphael Wan
+# Date: 1 Mar 2020
+
+// HoC Workshop #3 
+// Author: Raphael Wan
+func turnAround() {
+    turnLeft()
+    turnLeft()
+}
+func moveForward3() {
+    moveForward()
+    moveForward()
+    moveForward()
+}
+func collectLeft() {
+    turnLeft()
+    moveForward()
+    collectGem()
+    
+}
+func solveRightSide() {
+    //collect Gem
+    collectGem()
+    
+    //turn right
+    turnRight()
+    
+    //move forward x3
+    moveForward3()
+    
+    //collect left
+    collectLeft()
+    
+    //turnAround
+    turnAround()
+    
+    moveForward()
+    turnRight()
+    moveForward3()
+    turnRight()
+}
+func solveLeftSide() {
+    toggleSwitch()
+    collectLeft()
+    turnAround()
+    moveForward()
+    turnLeft()
+}
+
+    // Loop 5 times
+for i in 1 ... 5 {
+    // Forward
+    moveForward()
+    // Check Left or Right path
+    if isOnGem {
+        solveRightSide()
+    } else if isOnClosedSwitch{
+        solveLeftSide()
+    }
+}
+    // End
