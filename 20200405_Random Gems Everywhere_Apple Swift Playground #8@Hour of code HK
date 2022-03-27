@@ -1,0 +1,23 @@
+// Workshop: Hour of code HK - Apple Swift Playground #8 - Learn to code 2 - 2.5
+// Title: Random Gems Everywhere
+// Author: Raphael Wan
+// Date: 5 Apr 2020
+
+let totalGems = randomNumberOfGems
+var gemCounter = 0
+    //while gemCounter < totalGems
+
+while gemCounter != totalGems {
+    if isOnGem {
+        collectGem()
+        gemCounter += 1
+    }
+    //moveForward
+    moveForward()
+    if isBlocked {
+        turnLeft()
+        turnLeft()
+        pinkPortal.isActive = !pinkPortal.isActive
+        bluePortal.isActive = !bluePortal.isActive
+        }
+}
