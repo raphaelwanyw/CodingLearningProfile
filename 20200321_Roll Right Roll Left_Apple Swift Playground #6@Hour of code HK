@@ -1,0 +1,44 @@
+// Workshop: Hour of code HK - Apple Swift Playground #6 - Learn to code 1 - 7.5
+// Title: Roll Right Roll Left
+// Author: Raphael Wan
+// Date: 21 Mar 2020
+
+    //Coder: Raphael & Michael Wan
+    //Date: 21 Mar 2020
+
+func rollRight() {
+    turnRight()
+    collectGem()
+    moveForward()
+    collectGem()
+    while !isBlocked {
+        moveForward()
+    }
+    turnLeft()
+}
+func rollLeft() {
+    turnLeft()
+    toggleSwitch()
+    moveForward()
+    toggleSwitch()
+    while !isBlocked {
+        moveForward()
+    }
+    turnRight()
+}
+
+// If not an open switch 
+while !isOnOpenSwitch {
+    // move forward
+    moveForward()
+    
+    // if it is on Gem --> roll Right
+    if isOnGem {
+        rollRight()
+    }
+    // if it is on switch --> roll left
+    if isOnClosedSwitch {
+        rollLeft()
+    }
+}
+// End
