@@ -1,0 +1,36 @@
+# Workshop: Hour of code HK - Python #9
+# Title: Animal quiz
+# Author: Raphael Wan
+# Date: 7 Feb 2021
+
+def checkGuess(guess,answer):
+    global score
+#    if guess == answer:
+    if guess.lower() == answer.lower():
+        print('correct answer')
+        score = score + 1
+    else:
+        print('wrong answer')
+
+# This is the banner
+print ('HoCHK')
+print('Guess the animal!')
+score = 0
+
+# Question 1
+# Ask for a user input
+guess = input('Which bear live in the north pole?')
+print(guess)
+checkGuess(guess,'polar bear')
+
+#Question 2
+guess = input('What is the fastest land animal? ')
+print(guess)
+checkGuess(guess,'cheetah')
+
+#Question 3
+guess = input('Which animal is the largest one on Earth? ')
+print(guess)
+checkGuess(guess,'blue whale')
+
+print('Your total score is ',score)
