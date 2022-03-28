@@ -1,7 +1,7 @@
-// Workshop: Hour of code HK - Python #3
-// Title: Drawing a tangram
-// Author: Raphael Wan
-// Date: 27 Dec 2020
+# Workshop: Hour of code HK - Python #3
+# Title: Drawing a tangram
+# Author: Raphael Wan
+# Date: 27 Dec 2020
 
 from turtle import *
 
