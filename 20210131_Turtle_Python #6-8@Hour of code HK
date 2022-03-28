@@ -1,7 +1,7 @@
-// Workshop: Hour of code HK - Python #6-8
-// Title: Drawing turtles
-// Author: Raphael Wan
-// Date: 17 Jan 2021, 24 Jan 2021, 31 Jan 2021
+# Workshop: Hour of code HK - Python #6-8
+# Title: Drawing turtles
+# Author: Raphael Wan
+# Date: 17 Jan 2021, 24 Jan 2021, 31 Jan 2021
 
 # Use Random, Turtle
 import random
