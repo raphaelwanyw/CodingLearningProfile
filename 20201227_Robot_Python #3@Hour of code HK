@@ -1,0 +1,40 @@
+// Workshop: Hour of code HK - Python #3
+// Title: Drawing a tangram
+// Author: Raphael Wan
+// Date: 27 Dec 2020
+
+from turtle import *
+
+penup()
+
+#triangle func
+def tri(side,color):
+    fillcolor(color)
+    begin_fill()
+    forward(side)
+    left(135)
+    forward(side*(2**(1/2)))
+    end_fill()
+
+left(45)
+tri(200,'blue')
+home()
+
+left(135)
+tri(200,'green')
+home()
+
+right(45)
+tri(100,'yellow')
+home()
+
+right(45)
+forward(200)
+left(135)
+tri(100*(2**(1/2)),'brown')
+home()
+
+right(135)
+forward(100)
+tri(100,'pink')
+home()
