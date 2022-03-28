@@ -1,0 +1,41 @@
+// Workshop: Hour of code HK - Apple Swift Playground #15 - Learn to code 2 - 6.1
+// Title: Storing Information
+// Author: Raphael Wan
+// Date: 24 May 2020
+
+// Add any missing rows to your array.
+var rows = [0, 1, 2, 3, 4, 5]
+
+// Places a character on each row in rows.
+placeCharacters(at: rows)
+
+
+// Title: Iteration Exploration
+// Author: Raphael Wan
+
+let columns = [0, 1, 2, 3, 4]
+
+// Give your loop variable a name and pass in your array.
+for column in columns {
+    // Place a gem and a switch for each column.
+    world.place(Gem(), atColumn: column, row: 1)
+    world.place(Switch(), atColumn: column, row: 1)
+}
+
+
+// Title: Stacking Blocks
+// Author: Raphael Wan
+
+// Add the two remaining corner coordinates.
+var blockLocations = [
+    Coordinate(column: 0, row: 0),
+    Coordinate(column: 3, row: 3),
+    Coordinate(column: 0, row: 3),
+    Coordinate(column: 3, row: 0)
+]
+// Place five blocks at each coordinate.
+for coordinate in blockLocations {
+    for i in 1 ... 5 {
+        world.place(Block(), at: coordinate)
+    }
+}
