@@ -1,0 +1,31 @@
+// Workshop: Hour of code HK - Apple Swift Playground #11 - Learn to code 2 - 4.1
+// Title: Moving Further Forward
+// Author: Raphael Wan
+// Date: 26 Apr 2020
+
+let expert = Expert()
+
+func move(distance: Int) {
+    for i in 1 … distance {
+        expert.moveForward()
+    }
+}
+
+func moveAndTurn(distance: Int, direction: Bool) {
+    move(distance: distance)
+    if direction {
+        expert.turnLeft()
+    } else {
+        expert.turnRight()
+    }
+} 
+moveAndTurn(distance: 6, direction: false)
+moveAndTurn(distance: 2, direction: false)
+moveAndTurn(distance: 5, direction: true)
+moveAndTurn(distance: 5, direction: true)
+expert.turnLockUp()
+expert.turnLeft()
+moveAndTurn(distance: 3, direction: false)
+moveAndTurn(distance: 3, direction: false)
+move(distance: 4)
+expert.collectGem()
