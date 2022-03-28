@@ -1,0 +1,32 @@
+// Workshop: Hour of code HK - Apple Swift Playground #14 - Learn to code 2 - 5.6
+// Title: Build a Loop
+// Author: Raphael Wan
+// Date: 17 May 2020
+
+let totalGems = randomNumberOfGems
+
+let character = Character()
+let block1 = Block()
+let block2 = Block()
+world.place(block1, atColumn: 3, row: 3)
+world.place(block2, atColumn: 0, row: 2)
+world.place(character, facing: south, atColumn: 7, row: 3)
+var gemCounter = 0
+func checkGem() {
+    if character.isOnGem {
+        character.collectGem()
+        gemCounter += 1
+    }
+}
+while totalGems > gemCounter {
+    checkGem()
+    character.moveForward()
+    if !character.isBlockedRight {
+        character.turnRight()
+    } else if !character.isBlockedLeft{
+        character.turnLeft()
+    } else if character.isBlocked {
+        character.turnLeft()
+        character.turnLeft()
+        }
+}
