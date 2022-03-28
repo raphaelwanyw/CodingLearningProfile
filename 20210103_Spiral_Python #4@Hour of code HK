@@ -1,0 +1,28 @@
+// Workshop: Hour of code HK - Python #4
+// Title: Drawing a sprial
+// Author: Raphael Wan
+// Date: 3 Jan 2021
+
+# Author:Raphael
+
+import turtle as t
+
+from itertools import cycle
+
+colors = cycle(['red','yellow','orange','green','blue','tan'])
+
+def drawCircle(size, angle, shift):
+#    t.pencolor(color)
+    t.pencolor(next(colors))
+    t.circle(size)
+    t.right(angle)
+    t.forward(shift)
+    drawCircle(size+5, angle+1, shift+1)
+
+t.bgcolor('grey')
+
+t.pensize(4)
+
+t.speed(0)
+
+drawCircle(10, 0, 1)
