@@ -1,0 +1,22 @@
+// Workshop: Hour of code HK - Apple Swift Playground #16 - Learn to code 2 - 6.5
+// Title: Appending to an Array
+// Author: Raphael Wan
+// Date: 31 May 2020
+
+let allCoordinates = world.allPossibleCoordinates
+var blockSet: [Coordinate] = []
+
+for coordinate in allCoordinates {
+    // Check for coordinates with a column > 5 OR a row < 4.
+    if coordinate.column > 5 || coordinate.row < 4 {
+        // Append coordinate to blockSet.
+        blockSet.append(coordinate)
+    }
+}
+
+// For each coordinate in blockSet, place six blocks.
+for i in blockSet {
+    for j in 1 ... 6 {
+        world.place(Block(), at: i)
+    }    
+}
