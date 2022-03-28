@@ -1,0 +1,111 @@
+// Workshop: Hour of code HK - Python #6-8
+// Title: Drawing turtles
+// Author: Raphael Wan
+// Date: 17 Jan 2021, 24 Jan 2021, 31 Jan 2021
+
+# Use Random, Turtle
+import random
+import turtle as t
+
+
+# Function -- get line length()
+# Parameter list -- Empty
+# Get user input to define the line length
+
+def getLineLength():
+    
+    # get input from user via "Standard Input (stdin)"
+    choice = input('Enter line length "long, medium, short": ')
+    
+    # check pre-defined string
+    if choice == 'long':
+        line = 250
+    elif choice == 'medium':
+        line = 200
+    else:
+        line = 100
+
+    # return a value to the caller
+    return line
+
+# Function -- get line width()
+
+def getLineWidth():
+
+    # get input from user via "Standard Input (stdin)"
+    choice = input('Enter line length "superthick, thick, thin": ')
+    
+    # display what do we get from user?
+    print (choice)
+
+    # check pre-defined string
+    if choice == 'superthick':
+        line = 50
+    elif choice == 'thick':
+        line = 25
+    else:
+        line = 12
+
+    # return a value to the caller
+    return line
+
+# Function *TODO* -- Inside Window()
+# Give a bounding box for the movment of the turtle
+def insideWindow():
+
+    border = 100
+    left_limit = (-t.window_width() / 2) + border
+    right_limit = (t.window_width() / 2) - border
+    top_limit = (t.window_height() / 2) - border
+    bottom_limit = (-t.window_height() / 2) + border
+
+    #print(left_limit, right_limit, top_limit, bottom_limit)
+
+    (x,y) = t.pos()
+
+    inside = left_limit < x < right_limit and bottom_limit < y < top_limit
+
+    return inside
+
+# Function  Move Turtle()
+# Control the randomized movement of the Turtle
+# Control color?
+# Control position?
+
+def moveTurtle(lineLength):
+    penColor = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+    t.pencolor(random.choice(penColor))
+    t.fillcolor(random.choice(penColor))
+    t.shapesize(3,3,1)
+    t.stamp()
+    #t.right(15)
+    #t.fd(lineLength)
+
+    if insideWindow():
+        angle = random.randint(0,45)
+        t.right(angle)
+        t.fd(lineLength)
+    else:
+        t.bk(lineLength)
+
+# main program
+lineLength = getLineLength()
+#print('The return value is', lineLength)
+
+lineWidth = getLineWidth()
+#print('The return value is', lineWidth)
+
+t.shape('turtle')
+t.fillcolor('pink')
+t.pensize(lineWidth)
+
+print(t.window_width(),t.window_height())
+t.speed(0)
+
+t.screensize(canvwidth=1720, canvheight=880, bg='black')
+
+#t.forward(lineLength)
+
+# An infinite loop for the turtle movement
+while True:
+    moveTurtle(lineLength)
