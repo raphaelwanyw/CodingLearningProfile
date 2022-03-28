@@ -1,0 +1,115 @@
+// Workshop: Hour of code HK - Python #1
+// Title: Drawing a robot
+// Author: Raphael Wan
+// Date: 7 Dec 2020
+
+import turtle as t
+
+t.penup()
+t.shape('turtle')
+t.bgcolor('dodger blue')
+t.speed(10)
+
+def rect(horizontal,vertical,color):
+    t.pendown()
+    t.color(color)
+    t.begin_fill()
+    for counter in range(0,2):
+        t.forward(horizontal)
+        t.right(90)
+        t.forward(vertical)
+        t.right(90)
+    t.end_fill()
+    t.penup()
+
+def tri(length,color):
+    t.pendown()
+    t.color(color)
+    t.begin_fill()
+    for c in range(3):
+        t.forward(length)
+        t.left(120)
+    t.end_fill()
+    t.penup()
+
+def circle1(length,color):
+    t.pendown()
+    t.color(color)
+    t.begin_fill()
+    for c in range(30):
+        t.forward(length)
+        t.left(12)
+    t.end_fill()
+    t.penup()
+
+
+#for i in range(-400,400,100):
+#    for j in range(-350,400,100):
+#        t.goto(i,j)
+#        rect(10,10,'yellow')
+
+#t.goto(-240,180)
+#rect(100,50,'red')
+
+#feet
+t.goto(-100,-150)
+rect(50,20,'teal')
+
+t.goto(-30,-150)
+rect(50,20,'teal')
+
+#legs
+t.goto(-25,-50)
+rect(15,100,'violet')
+
+t.goto(-70,-50)
+rect(15,100,'violet')
+
+
+#body
+t.goto(-90,100)
+rect(100,150,'red')
+
+#arms
+t.goto(-150,70)
+rect(60,15,'blue')
+t.goto(-150,110)
+rect(15,40,'blue')
+t.goto(10,70)
+rect(60,15,'blue')
+t.goto(55,110)
+rect(15,40,'blue')
+
+#hands
+t.goto(-150,110)
+circle1(5,'blue')
+t.goto(55,110)
+circle1(5,'blue')
+
+
+#neck
+t.goto(-47.5,120)
+rect(15,20,'green')
+
+#head
+t.goto(-80,170)
+rect(80,50,'orange')
+
+#hat
+t.goto(-90,170)
+tri(100,'red')
+
+
+#eyes
+t.goto(-55,160)
+rect(30,10,'white')
+t.goto(-50,157)
+rect(5,5,'black')
+t.goto(-35,157)
+rect(5,5,'black')
+
+#mouth
+t.goto(-60,135)
+rect(40,5,'red')
+
+t.hideturtle()
