@@ -1,0 +1,98 @@
+// Workshop: Hour of code HK - Python #4
+// Title: Drawing stars
+// Author: Raphael Wan
+// Date: 10 Jan 2021
+
+import turtle as t
+from random import randint, random
+
+
+def drawMoon():
+    # go to a specific location
+    t.penup()
+    t.goto(250,200)
+    t.pendown()
+
+    # start filling the moon
+    t.color('orange')
+    t.begin_fill()
+    t.circle(100)
+    t.end_fill()
+    
+    # go to a specific location
+    t.penup()
+    t.goto(300,200)
+    t.pendown()
+
+    # start filling the moon
+    t.color('dark blue')
+    t.begin_fill()
+    t.circle(100)
+    t.end_fill()
+    
+
+def drawStar(size,points,x,y,color):
+    #parameters for the star
+    #points = 7 
+    angle = 180 - (180 / points)
+
+    # define the color of the star
+    t.color(color)
+
+    # go to a specific location
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+    # start filling the star
+    t.begin_fill()
+
+    # repeat 5 times
+    for i in range (points):
+        # draw line
+        t.forward(size)
+        # turn angle
+        t.right(angle)
+
+    # end filling the star
+    t.end_fill()
+
+def drawPlanet(size,x,y,color):
+    # go to a specific location
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+    # start filling the planet
+    t.color(color)
+    t.begin_fill()
+    t.circle(size)
+    t.end_fill()
+    
+
+t.Screen().bgcolor('dark blue')
+
+drawMoon()
+while True:
+
+# define parameters for the stars
+
+# size
+    ranSize=randint(10,50)
+
+# points
+    ranPts = randint(2,5) * 2 + 1
+
+    # x, y
+    ranX = randint(-500, 500)
+    ranY = randint(-400, 400)
+
+    # color
+    ranColor = (random(), random(), random())
+
+
+    # Draw star
+    if (randint(1,2) == 1):
+        drawStar(ranSize*2,ranPts,ranX,ranY,ranColor)
+    else:
+        drawPlanet(ranSize/2,ranX,ranY,ranColor)
