@@ -1,0 +1,40 @@
+// Workshop: Hour of code HK - Apple Swift Playground #10 - Learn to code 2 - 3.4
+// Title: It Takes Two
+// Author: Raphael Wan
+// Date: 19 Apr 2020
+
+let expert = Expert()
+let character = Character()
+func moveForward3() {
+    expert.moveForward()
+    expert.moveForward()
+    expert.moveForward()
+}
+func firstHalf() {
+    moveForward3()
+    expert.turnRight()
+    expert.moveForward()
+    expert.moveForward()
+    expert.turnLeft()
+}
+func secondHalf() {
+    expert.turnRight()
+    expert.moveForward()
+    expert.moveForward()
+    expert.turnRight()
+    moveForward3()    
+}
+
+expert.turnLeft()
+firstHalf()
+expert.turnLockDown()
+expert.turnLockDown()
+character.moveForward()
+character.moveForward()
+character.collectGem()
+secondHalf()
+firstHalf()
+expert.turnLockUp()
+character.moveForward()
+character.moveForward()
+character.toggleSwitch()
