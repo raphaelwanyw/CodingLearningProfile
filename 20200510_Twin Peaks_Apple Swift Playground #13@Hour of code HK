@@ -1,0 +1,39 @@
+// Workshop: Hour of code HK - Apple Swift Playground #13 - Learn to code 2 - 4.8
+// Title: Twin Peaks
+// Author: Raphael Wan
+// Date: 10 May 2020
+
+let totalGems = randomNumberOfGems
+
+var gemCounter = 0
+let character = Character()
+let expert = Expert()
+func checkGem() {
+    if character.isOnGem {
+        character.collectGem()
+        gemCounter += 1
+    }
+}
+world.place(expert, facing: north, atColumn: 0, row: 4)
+world.place(character, facing: north, atColumn: 2, row: 0)
+expert.turnLockUp()
+while gemCounter < totalGems {
+    for i in 1 ... 6 {
+        checkGem()
+        character.jump()
+    }
+    if !character.isBlockedRight {
+        character.turnRight()
+        character.moveForward()
+        checkGem()
+        character.turnRight()
+    } else if !character.isBlockedLeft {
+        character.turnLeft()
+        checkGem()
+        character.moveForward()
+        character.turnLeft()
+    } else if character.isBlocked{
+        character.turnLeft()
+        character.turnLeft()
+    }
+}
