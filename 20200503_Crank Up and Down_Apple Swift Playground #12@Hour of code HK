@@ -1,0 +1,57 @@
+// Workshop: Hour of code HK - Apple Swift Playground #12 - Learn to code 2 - 4.3
+// Title: Crank Up and Down
+// Author: Raphael Wan
+// Date: 3 May 2020
+
+let expert = Expert()
+let character = Character()
+
+// func turnAround
+func turnAround() {
+    character.turnLeft()
+    character.turnLeft()
+}
+
+// var GemCounter
+var gemCounter = 0
+// expert turn 4 locks up
+for i in 1 ... 4 {
+    expert.turnLock(up: true, numberOfTimes: 4)
+    expert.turnRight()
+}
+// func checkGem
+func checkGem() {
+    if character.isOnGem {
+        character.collectGem()
+        gemCounter += 1
+    }
+}
+// Alog - character collect 3 gems
+while gemCounter < 3 {
+    character.moveForward()
+    checkGem()
+    if !character.isBlockedRight {
+        character.turnRight()
+    }
+}
+// character m1
+character.move(distance: 1)
+// expert turn 4 locks down
+for i in 1 ... 4 {
+    expert.turnLock(up: false, numberOfTimes: 3)
+    expert.turnRight()
+}
+// character turnLeft
+character.turnLeft()
+
+// Alog - character collect remaining 4
+while gemCounter < 7 {
+    character.moveForward()
+    checkGem()
+    if !character.isBlockedRight {
+        character.turnRight()
+    }
+    if character.isBlocked {
+        turnAround()
+    }
+}
