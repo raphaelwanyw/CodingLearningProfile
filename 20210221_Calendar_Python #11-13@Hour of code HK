@@ -1,0 +1,61 @@
+# Workshop: Hour of code HK - Python #11-13
+# Title: Calendar
+# Author: Raphael Wan
+# Date: 21 Feb 2021, 28 Feb 2021, 7 Mar 2021
+# https://replit.com/@WanRaphael/Calendar#main.py
+
+from tkinter import Tk, Canvas
+from datetime import date, datetime
+
+def get_events():
+  list_events = []
+  #print(list_events)
+  with open('events.txt') as file:
+    for line in file:
+      line = line.rstrip('\n')
+      current_event = line.split(',')
+      event_date = datetime.strptime(current_event[1], '%d/%m/%y').date()
+      current_event[1] = event_date
+      list_events.append(current_event)
+  return list_events
+
+# To compare the difference between two given dates
+def between_days(date1, date2):
+  time_between = str(date1 - date2)
+  number_of_days = time_between.split(' ')
+  return number_of_days[0]
+
+# Create a Canvas for display
+root = Tk()
+c = Canvas(root, width=800, height=800, bg='red')
+c.pack()
+
+# Add text for the Canvas
+c.create_text(100,50,text='My countdown calendar')
+vertical_position = 100
+
+# get event list from a file
+events = get_events()
+
+# create a dateime object for comparison
+today = date.today()
+
+# looping the items in events list
+print('I am now in main loop!')
+for event in events:
+  event_name = event[0]
+  event_date = event[1]
+  #print(event_name, event_date)
+  days_until = between_days(event_date, today)
+  print('The days until:', days_until)
+
+  display = 'It is %s days until %s' % (days_until, event_name)
+  c.create_text(150, vertical_position, text = display)
+  vertical_position = vertical_position + 30\
+  
+
+### events.txt
+Ching Ming,04/04/21
+Halloween,31/10/21
+Christmas,25/12/21
+Chinese New Year,12/02/22
