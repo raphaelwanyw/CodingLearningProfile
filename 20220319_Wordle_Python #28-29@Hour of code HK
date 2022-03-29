@@ -1,0 +1,55 @@
+# Workshop: Hour of code HK - Python #28-29
+# Title: Wordle
+# Author: Raphael Wan
+# Date: 19 Mar 2022, 26 Mar 2022
+# https://replit.com/@WanRaphael/WordleInPython#main.py
+
+
+import random 
+
+# Prepare the word list
+words = ['arosa','arise','aloft','among','abuse','beats','bread','chase','chose','cycle','dacks','daddy','fatty','froze','green','geers','hired','haste','igloo','lacks','lemon','learn','mouse','mutes','meets','mario','odder']
+
+#Randomly pick one 5-letter word
+def pick_random_word():
+  global answer
+  #answer = words[random.randint(0,len(words) - 1)]
+  answer = random.choice(words)
+  
+pick_random_word()
+
+def checkHint(guess, answer):
+  for i in range(5):
+    if (answer[i] == guess):
+      return True
+  return False #need help? ill help
+
+def checkWord():
+  hint_list = ''
+  for i in range(5):
+    if (guess[i] == answer[i]):
+      hint = "*"
+    elif checkHint(guess[i], answer):
+      hint = 'o'
+    else:
+      hint = '?'
+    hint_list = hint_list + hint
+  print(hint_list)
+
+# Main loop
+
+lives = 10
+  
+for i in range(lives):
+  print(lives)
+  guess = input('Guess the five-letter word!')
+  checkWord()
+  if guess == answer:
+    print('Correct!')
+    break
+  else:
+    print('Wrong!')
+  
+  lives = lives - 1
+  
+print('The correct answer is ' + answer)
