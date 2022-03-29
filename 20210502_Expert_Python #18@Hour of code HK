@@ -1,0 +1,52 @@
+# Workshop: Hour of code HK - Python #18
+# Title: Ask the expert - Capital city of the world
+# Author: Raphael Wan
+# Date: 2 May 2021
+# https://replit.com/@WanRaphael/WorldCapitalCityDatabase#main.py
+
+# World Capital City Database
+
+from tkinter import Tk, simpledialog, messagebox
+
+print('Ask the expert - Capital city of the world')
+
+# This function handles the file reading from a data file
+def read_from_file():
+  with open('Capital_city.txt') as file:
+    for line in file:
+      line = line.rstrip('\n')
+      country, city =line.split('/')
+      country = country.lower()
+      city = city.lower()
+      the_world[country] = city
+
+def write_to_file(country_name, city_name):
+  with open('Capital_city.txt', 'a')as file:
+    file.write('\n' + country_name + '/' + city_name)
+
+def write_to_csv():
+  with open('Capital_city2.csv', 'w')as file:
+    for country, city in the_world.items():
+      file.write(country + ',' + city + '\n')
+
+root = Tk()
+root.withdraw()
+the_world = {}
+read_from_file()
+write_to_csv()
+
+while True:
+  query_country = simpledialog.askstring('Country', 'Type the name of a country:')
+  
+  query_country = query_country.lower()
+
+  if query_country in the_world:
+    result = the_world[query_country]
+    messagebox.showinfo('Answer', 'The capital city of '  +   query_country.title() + ' is ' + result.title() + '!')
+
+  else:
+    print('This country is not in the data base.')
+    new_city = simpledialog.askstring('Teach me', "I don't know! " + 'What is the capital city of ' + query_country.title() + '?')
+    print(new_city.title())
+
+    write_to_file(query_country, new_city)
