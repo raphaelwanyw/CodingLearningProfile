@@ -1,0 +1,56 @@
+# Workshop: Hour of code HK - Python #15
+# Title: Sentence generator
+# Author: Raphael Wan
+# Date: 28 Mar 2021
+# https://replit.com/@WanRaphael/Sentence-Generator#main.py
+
+
+#!/usr/bin/env python
+# encoding: utf-8
+
+import random
+import string
+
+# Banner
+print('Hour of Code Hong Kong')
+print('Welcome to Sentence Generator2\n')
+
+from tkinter import Tk, Canvas
+
+# Noun list
+noun_list = ['apple', 'dinosaur','sheep', 'goat']
+#noun_list = ["蘋果","恐龍","綿羊","山羊"]
+
+#q_file = open("riddle_question.txt", encoding="utf-8")
+#q_file_content = q_file.read()
+
+
+# Verb list
+verb_list = ['kills', 'fights','bites', 'eats']
+
+# Adjective list
+adjective_list = ['sleepy','slow','wet', 'wet']
+
+# Adverb list
+adverb_list = ['slowiy','sadly','angrily', 'sadly']
+
+# Create a Canvas for display
+root = Tk()
+c = Canvas(root, width=800, height=800, bg='red')
+c.pack()
+
+# Add text for the Canvas
+c.create_text(100,50,text='My Sentence Generator')
+vertical_position = 100
+
+
+for i in range(10):
+  noun = random.choice(noun_list)
+  verb = random.choice(verb_list)
+  adj = random.choice(adjective_list)
+  adv = random.choice(adverb_list)
+  my_sentence = noun + " " + verb +" " + adj +" " + adv +"."
+  print(my_sentence)
+
+  c.create_text(150, vertical_position, text = my_sentence)
+  vertical_position = vertical_position + 30
