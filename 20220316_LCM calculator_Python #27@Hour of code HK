@@ -1,0 +1,35 @@
+# Workshop: Hour of code HK - Python #27
+# Title: LCM calculator
+# Author: Raphael Wan
+# Date: 16 Mar 2022
+# https://replit.com/@WanRaphael/LCMCalculator2#main.py
+
+
+import tkinter as tk
+from tkinter import *
+
+def getLCM():
+  x1 = int(entry1.get())
+  x2 = int(entry2.get())
+
+  maximum = max([x1, x2])
+  LCM = maximum
+  
+  while True:
+    if LCM % x1 == 0 and LCM % x2 == 0:
+      break
+    else:
+      LCM = LCM + maximum
+  label1 = tk.Label(master, text = 'The LCM is: ' + str(LCM))
+  canvas1.create_window(270, 300, window = label1)
+
+master = Tk()
+canvas1 = tk.Canvas(master, width = 600, height = 600)
+canvas1.pack()
+entry1 = tk.Entry(master)
+canvas1.create_window(270, 140, window = entry1)
+entry2 = tk.Entry(master)
+canvas1.create_window(270, 180, window = entry2)
+
+button1 = tk.Button(text = 'Get the LCM', command = getLCM)
+canvas1.create_window(270, 270, window = button1)
