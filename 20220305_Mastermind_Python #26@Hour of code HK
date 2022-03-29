@@ -1,0 +1,32 @@
+# Workshop: Hour of code HK - Python #26
+# Title: Mastermind game
+# Author: Raphael Wan
+# Date: 5 Mar 2022
+# https://replit.com/@WanRaphael/Mastermind#main.py
+
+
+import random
+
+lives = 10
+heart_symbol = u'\u2764'
+colors = ['R', 'G', 'B', 'W', 'Y']
+
+length = int(input('\nWhat is the length of the secret color (2 / 3 / 4 / 5)? '))
+
+color_list = ''
+for i in range(length):
+  color_list = random.choice(colors) + color_list
+  #print(color_list)
+
+# Main loop
+while (lives > 0):
+  print('lives left:' + heart_symbol * lives)
+  guess = input('\nWhat is the secret color (R, G, B, W, Y)? ')
+
+  if(color_list!= guess):
+    lives = lives - 1
+    print('Not correct! Please try again!\n')  
+  else:
+    print('You got the color correct!\n')
+    break
+  
