@@ -1,0 +1,76 @@
+# Workshop: Hour of code HK - Python #23-24
+# Title: Snake game
+# Author: Raphael Wan
+# Date: 12 Sep 2021, 3 Oct 2021
+# https://replit.com/@WanRaphael/snake2#main.py
+
+
+import turtle as t
+
+t.bgcolor('blue')
+cater = t.Turtle()
+cater.shape('square')
+cater.color('red')
+cater.speed(0)
+cater.penup()
+#while True: 
+  #cater.fd(1)
+
+leaf = t.Turtle()
+leaf_shape = ((0,0),(14,2),(18,6),(20,20),(6,18),(2,14))
+t.register_shape('leaf',leaf_shape)
+leaf.shape('leaf')
+leaf.color("green")
+leaf.speed(0)
+
+leaf.setx(0)
+leaf.sety(0)
+leaf.showturtle()
+
+text = t.Turtle()
+text.write('Press space to start', align = 'center', font = ('Arial', 16, 'bold'))
+text.hideturtle()
+
+score_turtle = t.Turtle()
+score_turtle.hideturtle()
+
+def outside_window():
+  pass
+
+def game_over():
+  pass
+
+def display_score():
+  pass
+
+def place_leaf():
+  pass
+
+def move_up():
+  cater.setheading(90)
+  cater.fd(100)
+
+def move_down():
+  cater.setheading(270)
+  cater.fd(100)
+
+def move_left():
+  cater.setheading(180)
+  cater.fd(100)
+
+def move_right():
+  cater.setheading(0)
+  cater.fd(100)
+
+def start_game():
+  print('The game has started!')
+
+t.onkey(start_game,'space')
+
+t.onkey(move_up,"Up")
+t.onkey(move_down,"Down")
+t.onkey(move_left,"Left")
+t.onkey(move_right,"Right")
+t.listen()
+
+t.mainloop()
