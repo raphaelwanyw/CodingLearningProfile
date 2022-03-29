@@ -1,0 +1,93 @@
+# Workshop: Hour of code HK - Python #16-17
+# Title: Guess a word game
+# Author: Raphael Wan
+# Date: 4 Apr 2021, 18 Apr 2021
+# https://replit.com/@WanRaphael/Guessaword#main.py
+
+# Hour of Code HK - Nine Lives v1
+# Author: Raphael Wan
+# Date: 4 April 2021 (v1)
+
+import random
+
+lives = 10
+heart_symbol = u'\u2764'
+clue = list('???')
+
+words = ['eel','sea','eat','how','zoo','egg','fat']
+secret_word = random.choice(words)
+
+
+while lives > 0:
+ print(clue)
+ # print('Lives left:', lives)
+ print('Lives left:' + heart_symbol * lives)
+ 
+ guess = input('Guess A Word: ')
+ print('user input: ' + guess)
+
+ if guess in secret_word:
+   print('I am going to update the clue!') 
+
+ if guess == secret_word:
+   print('you are correct!')
+   break
+ else:
+   print('sorry,you are wrong?! ')
+   lives = lives - 1
+
+
+# https://replit.com/@WanRaphael/Guessawordv2#main.py
+
+# Hour of Code HK - Nine Lives v2
+# Author: Raphael Wan
+# Date: 18 April 2021
+
+# Import package
+import random
+
+# Define program parameters
+lives = 100
+heart_symbol = u'\u2764'
+
+# Read animal list from a File
+a_file = open('data.txt')
+a_content = a_file.read()
+words = a_content.splitlines()
+secret_word = random.choice(words)
+secret_word = secret_word.lower()
+
+clue = list('?' * len(secret_word))
+
+# Update the clue based on the user input "guess"
+def update_clue(guess, secret_word, clue):
+  index = 0
+  while index < len(secret_word):
+    #if guess == secret_word[i], then update clue[i]
+    if guess.lower() == secret_word[index].lower():
+      clue[index] = guess
+    index = index + 1
+
+# Main Loop
+while lives > 0:
+  print(clue)
+  print('\nLives left: ' + heart_symbol * lives)
+
+  # Get user input
+  guess = input('Guess A Word: ')
+  print('user input: ' + guess)
+
+  # If guess inside secret word, update clue
+  if guess in secret_word:
+    update_clue(guess, secret_word, clue)
+  
+  # Check if the answer is correct
+  if guess.lower() == secret_word.lower():
+    print('You are correct! Bingo!')
+    break
+  else:
+    print('Sorry, you are wrong! You lose a life!')
+    lives = lives - 1
+
+print('The correct answer is ', secret_word)
+# end of program
